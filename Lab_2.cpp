@@ -93,3 +93,4 @@ char mostUsed(string str)
     }
     return letters[maxIndex];
 }
+ 
