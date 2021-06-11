@@ -1,6 +1,6 @@
 /*
-Варіант 7.
-Обчислити значення суми S = 1/1! + 1/2! + ... + 1 / k!.
+Р’Р°СЂС–Р°РЅС‚ 7.
+РћР±С‡РёСЃР»РёС‚Рё Р·РЅР°С‡РµРЅРЅСЏ СЃСѓРјРё S = 1/1! + 1/2! + ... + 1 / k!.
 */
 
 #include <iostream>
@@ -19,17 +19,17 @@ int main()
 	another_try:
 	int k;
 	double S, last_multiplier = 1, i_float = 1;
-	cout << "Введіть кількість факторіалів : ";
+	cout << "Р’РІРµРґС–С‚СЊ РєС–Р»СЊРєС–СЃС‚СЊ С„Р°РєС‚РѕСЂС–Р°Р»С–РІ : ";
 	cin >> k;
 	k++;
 	if (k <= 1)
 	{
-		cout << "Введене некоректне число !" << endl;
+		cout << "Р’РІРµРґРµРЅРµ РЅРµРєРѕСЂРµРєС‚РЅРµ С‡РёСЃР»Рѕ !" << endl;
 		goto another_try;
 	}
-	cout << "\nНерекурсивна функція : " << endl;
+	cout << "\nРќРµСЂРµРєСѓСЂСЃРёРІРЅР° С„СѓРЅРєС†С–СЏ : " << endl;
 	without(S, k);
-	cout << "\nРекурсивна функція : " << endl;
+	cout << "\nР РµРєСѓСЂСЃРёРІРЅР° С„СѓРЅРєС†С–СЏ : " << endl;
 	recursive(S, k, last_multiplier, i_float);
 	return 0;
 }
@@ -41,9 +41,9 @@ int without(double S, int k)
 	{
 		double i_float = i;
 		S = (S + (1/(last_multiplier*i_float)));
-		cout << "Результат : " << S << "\n";
+		cout << "Р РµР·СѓР»СЊС‚Р°С‚ : " << S << "\n";
 		last_multiplier = last_multiplier*i_float;
-		cout << "Факторіал : із " << i << "! - " << last_multiplier << "\n" << endl;
+		cout << "Р¤Р°РєС‚РѕСЂС–Р°Р» : С–Р· " << i << "! - " << last_multiplier << "\n" << endl;
 	}
 	return 0;
 }
@@ -53,9 +53,9 @@ int recursive(double S, int k, double last_multiplier, double i_float)
 	if (i_float == k)
 		return 0;
 	S = (S + (1/(last_multiplier*i_float)));
-	cout << "Результат : " << S << "\n";
+	cout << "Р РµР·СѓР»СЊС‚Р°С‚ : " << S << "\n";
 	last_multiplier = last_multiplier*i_float;
-	cout << "Факторіал : із " << i_float << "! - " << last_multiplier << "\n" << endl;
+	cout << "Р¤Р°РєС‚РѕСЂС–Р°Р» : С–Р· " << i_float << "! - " << last_multiplier << "\n" << endl;
 	i_float++;
 	recursive(S, k, last_multiplier, i_float);
 }
