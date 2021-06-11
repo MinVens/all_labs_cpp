@@ -1,10 +1,10 @@
-/*Варіант 10.
-Написати рекурсивну функцію power (base, exponent), яка повертає значення baseexponent
+/*Р’Р°СЂС–Р°РЅС‚ 10.
+РќР°РїРёСЃР°С‚Рё СЂРµРєСѓСЂСЃРёРІРЅСѓ С„СѓРЅРєС†С–СЋ power (base, exponent), СЏРєР° РїРѕРІРµСЂС‚Р°С” Р·РЅР°С‡РµРЅРЅСЏ baseexponent
 .
-Наприклад, power(3, 4) = 3 * 3 * 3 * 3 . Нехай exponent є цілим, більшим або рівним 1.
-Підказка: крок рекурсії міг би використати співвідношення baseexponent = base * baseexponent
-, а
-завершальною умовою буде випадок, коли значення exponent стане рівним 1.*/
+РќР°РїСЂРёРєР»Р°Рґ, power(3, 4) = 3 * 3 * 3 * 3 . РќРµС…Р°Р№ exponent С” С†С–Р»РёРј, Р±С–Р»СЊС€РёРј Р°Р±Рѕ СЂС–РІРЅРёРј 1.
+РџС–РґРєР°Р·РєР°: РєСЂРѕРє СЂРµРєСѓСЂСЃС–С— РјС–Рі Р±Рё РІРёРєРѕСЂРёСЃС‚Р°С‚Рё СЃРїС–РІРІС–РґРЅРѕС€РµРЅРЅСЏ baseexponent = base * power(base, exponent)
+, Р°
+Р·Р°РІРµСЂС€Р°Р»СЊРЅРѕСЋ СѓРјРѕРІРѕСЋ Р±СѓРґРµ РІРёРїР°РґРѕРє, РєРѕР»Рё Р·РЅР°С‡РµРЅРЅСЏ exponent СЃС‚Р°РЅРµ СЂС–РІРЅРёРј 1.*/
 
 #include <iostream>
 #include <Windows.h>
@@ -20,24 +20,24 @@ int main()
 	SetConsoleOutputCP(1251);
 	int base, exponent;
 	another_try:
-	cout << "Введіть число та його степінь (через пробіл) : ";
+	cout << "Р’РІРµРґС–С‚СЊ С‡РёСЃР»Рѕ С‚Р° Р№РѕРіРѕ СЃС‚РµРїС–РЅСЊ (С‡РµСЂРµР· РїСЂРѕР±С–Р») : ";
 	cin >> base >> exponent;
 	if (exponent < 1)
 	{
-		cout << "Введіть значення степеня >=1 !\n";
+		cout << "Р’РІРµРґС–С‚СЊ Р·РЅР°С‡РµРЅРЅСЏ СЃС‚РµРїРµРЅСЏ >=1 !\n";
 		goto another_try;
 	}
 	power(base, exponent);
-	//cout << "Результат : " << result;
+	//cout << "Р РµР·СѓР»СЊС‚Р°С‚ : " << result;
 	return 0;
 }
 
 int power(int base, int exponent)
 {
-	int result;
+	double result;
 	if (exponent == 1)
 		return (result);
 	result = pow(base, exponent);
-	cout << "Результат : " << result << "\n" << "base'n'exp : " << base << ", " << exponent << "\n";
+	cout << "Р РµР·СѓР»СЊС‚Р°С‚ : " << result << "\n";
 	power(base, pow(base, exponent));
 }
